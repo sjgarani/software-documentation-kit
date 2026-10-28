@@ -6,25 +6,20 @@ This repository contains documentation templates and lightweight tools for keepi
 
 - `adr/`: architectural and technical decisions with lasting effects.
 - `specs/`: requirements and proposals for significant changes.
-- `runbooks/`: operational, diagnostic, and recovery procedures.
-- `guides/`: practices that apply across multiple changes.
 - `tools/docflow.py`: dependency-free CLI for tracking document statuses.
 - `tools/skills/documentation-workflow/`: reusable agent skill for maintaining documentation and statuses.
 
 ## Getting started
 
-1. Read [documentation practices](guides/documentation-practices.md) and adapt them to the team.
-2. For a change with substantial requirements or coordination, copy [the Spec template](specs/spec-template.md) to `YYYY-MM-DD-topic.md`.
-3. For a lasting technical decision, use [the ADR template](adr/adr-template.md) and name the file `NNNN-short-title.md`.
-4. For operating or recovering a service, copy [the runbook template](runbooks/runbook-template.md) and write verifiable steps.
-5. Install the kit in another repository with `bash tools/install.sh /path/to/project`.
+1. For a change with substantial requirements or coordination, copy [the Spec template](specs/spec-template.md) to `YYYY-MM-DD-topic.md`.
+2. For a lasting technical decision, use [the ADR template](adr/adr-template.md) and name the file `NNNN-short-title.md`.
+3. Install the kit in another repository with `bash tools/install.sh /path/to/project`.
 
 ## Conventions
 
 - Write documentation in English and use relative links within `docs/`.
 - Name ADRs with a sequential number and short title: `NNNN-short-title.md`.
 - Name Specs with a date and topic: `YYYY-MM-DD-topic.md`.
-- Name operational procedures `runbook-short-title.md`; keep guides as descriptive Markdown files under `guides/`.
 - Include status, owner, and related links in status-tracked documents. README files and directory indexes are reviewed without a workflow status.
 - Mark superseded documents and link to their replacements; preserve decision history.
 - Keep documentation with the related code and review it alongside relevant changes.
@@ -36,3 +31,4 @@ The [ADR 0001](adr/0001-documentation-workflow-and-agent-rules.md) defines the d
 | Date | Change | Owner |
 |---|---|---|
 | 2026-10-28 | Documented the history process and CLI commands. | Project team |
+| 2026-10-28 | Removed Guides and Runbooks from the main-branch documentation scope. | Project team |

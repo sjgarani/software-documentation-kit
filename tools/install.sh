@@ -11,7 +11,7 @@ target_dir="$(mkdir -p "$1" && cd "$1" && pwd)"
 docs_dir="$target_dir/docs"
 mkdir -p "$docs_dir"
 
-for item in README.md adr specs runbooks guides; do
+for item in README.md adr specs; do
   cp -R "$kit_dir/$item" "$docs_dir/"
 done
 mkdir -p "$docs_dir/tools"

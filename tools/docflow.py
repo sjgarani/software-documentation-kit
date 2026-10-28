@@ -12,8 +12,6 @@ from pathlib import Path
 
 ADR_STATES = ("Proposed", "Accepted", "Rejected", "Superseded", "Withdrawn")
 SPEC_STATES = ("Draft", "In Review", "Approved", "In Progress", "Completed", "Cancelled")
-RUNBOOK_STATES = ("Draft", "In Review", "Active", "Retired")
-GUIDE_STATES = ("Draft", "In Review", "Published", "Retired")
 TRANSITIONS = {
     "adr": {
         "Proposed": {"Accepted", "Rejected"},
@@ -26,18 +24,6 @@ TRANSITIONS = {
         "Approved": {"In Progress", "Cancelled"},
         "In Progress": {"Completed", "Cancelled"},
         "Completed": set(), "Cancelled": set(),
-    },
-    "runbook": {
-        "Draft": {"In Review"},
-        "In Review": {"Draft", "Active", "Retired"},
-        "Active": {"In Review", "Retired"},
-        "Retired": set(),
-    },
-    "guide": {
-        "Draft": {"In Review"},
-        "In Review": {"Draft", "Published", "Retired"},
-        "Published": {"In Review", "Retired"},
-        "Retired": set(),
     },
 }
 STATUS_LINE = re.compile(r"(?m)^- \*\*Status:\*\*\s*(.*?)\s*$")
@@ -57,14 +43,10 @@ def documents(root: Path):
     for kind, folder, pattern, valid in (
         ("adr", "adr", "[0-9][0-9][0-9][0-9]-*.md", ADR_STATES),
         ("spec", "specs", "[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]-*.md", SPEC_STATES),
-        ("runbook", "runbooks", "runbook-*.md", RUNBOOK_STATES),
-        ("guide", "guides", "*.md", GUIDE_STATES),
     ):
         directory = docs_root / folder
         if directory.is_dir():
             for path in sorted(directory.glob(pattern)):
-                if kind == "runbook" and path.name == "runbook-template.md":
-                    continue
                 yield kind, path, valid
 
 
@@ -101,7 +83,7 @@ def append_history(content: str, change: str, owner: str) -> str:
 
 
 def command_list(root: Path, selected_kind: str | None = None) -> int:
-    grouped = {kind: [] for kind in ("adr", "spec", "runbook", "guide")}
+    grouped = {kind: [] for kind in ("adr", "spec")}
     for kind, path, valid in documents(root):
         if selected_kind and kind != selected_kind:
             continue
@@ -110,8 +92,7 @@ def command_list(root: Path, selected_kind: str | None = None) -> int:
 
     if not any(grouped.values()):
         description = {
-            "adr": "numbered ADR", "spec": "dated Spec", "runbook": "tracked Runbook",
-            "guide": "Guide",
+            "adr": "numbered ADR", "spec": "dated Spec",
         }.get(selected_kind, "tracked document")
         print(f"No {description} found.")
         return 0
@@ -120,8 +101,7 @@ def command_list(root: Path, selected_kind: str | None = None) -> int:
         if not entries:
             continue
         states = {
-            "adr": ADR_STATES, "spec": SPEC_STATES, "runbook": RUNBOOK_STATES,
-            "guide": GUIDE_STATES,
+            "adr": ADR_STATES, "spec": SPEC_STATES,
         }[kind]
         print(f"{kind.upper()} board")
         print("| Document | " + " | ".join(states) + " | Invalid |")
@@ -225,7 +205,7 @@ def main() -> int:
     subparsers = parser.add_subparsers(dest="command", required=True)
     list_parser = subparsers.add_parser("list", help="show document status boards")
     list_parser.add_argument(
-        "kind", nargs="?", choices=("all", "adr", "spec", "runbook", "guide"),
+        "kind", nargs="?", choices=("all", "adr", "spec"),
         help="show all tracked documents or only one document type",
     )
     subparsers.add_parser("check", help="validate documented statuses")

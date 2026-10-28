@@ -3,7 +3,7 @@
 - **Status:** Accepted
 - **Date:** 2026-10-28
 - **Owners:** project team
-- **Related:** [documentation practices](../guides/documentation-practices.md), [Spec template](../specs/spec-template.md)
+- **Related:** [Spec template](../specs/spec-template.md)
 
 ## Context
 
@@ -17,10 +17,8 @@ The valid statuses and transitions are:
 
 - **ADR:** `Proposed` → `Accepted` or `Rejected`; `Accepted` → `Superseded` or `Withdrawn`. Final statuses have no outgoing transitions. A changed decision requires a new ADR linked to the previous one.
 - **Spec:** `Draft` → `In Review` or `Cancelled`; `In Review` → `Draft`, `Approved`, or `Cancelled`; `Approved` → `In Progress` or `Cancelled`; `In Progress` → `Completed` or `Cancelled`. Final statuses have no outgoing transitions.
-- **Runbook:** `Draft` → `In Review`; `In Review` → `Draft`, `Active`, or `Retired`; `Active` → `In Review` or `Retired`. `Retired` is final. Move an Active runbook to In Review when its procedure needs verification or revision.
-- **Guide:** `Draft` → `In Review`; `In Review` → `Draft`, `Published`, or `Retired`; `Published` → `In Review` or `Retired`. `Retired` is final. Use In Review when a published guide needs substantive updates.
 
-README files and directory index pages are not status-tracked; keep them current through ordinary documentation review. The kit provides `tools/docflow.py`, a Python tool with no external dependencies. It lists ADRs, Specs, Runbooks, and Guides; validates their statuses; and allows only permitted transitions when changing a status. It does not replace review, Git history, approval, or task management.
+README files and directory index pages are not status-tracked; keep them current through ordinary documentation review. The kit provides `tools/docflow.py`, a Python tool with no external dependencies. It lists ADRs and Specs, validates their statuses, and allows only permitted transitions when changing a status. It does not replace review, Git history, approval, or task management.
 
 Every maintained document ends with a `History` table using the columns `Date`, `Change`, and `Owner`. Templates include this section. The `history` command appends entries for material content changes. `set-state` records each status transition automatically; its optional `--change` argument can include the reason or summarize related edits. Agents using the installed skill must record material documentation edits and must not create a separate history entry for a transition already recorded by `set-state`.
 
@@ -69,3 +67,4 @@ Revisit this decision if additional statuses are needed, approvals must be track
 | Date | Change | Owner |
 |---|---|---|
 | 2026-10-28 | Defined the History section and automated history recording for document updates and status transitions. | Project team |
+| 2026-10-28 | Limited document status workflows and tool coverage on main to ADRs and Specs. | Project team |
