@@ -60,6 +60,7 @@ How will the acceptance criteria be demonstrated? List manual or automated check
 - [ ] Question — owner — deadline or condition for resolution
 
 Use the transitions defined in [ADR 0001](../adr/0001-documentation-workflow-and-agent-rules.md). The `tools/docflow.py` utility validates and updates the status field.
+Follow the [Spec workflow](spec-workflow.md) when reviewing or changing a Spec status.
 
 ## History
 

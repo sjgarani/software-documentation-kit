@@ -11,6 +11,7 @@ Use this skill when creating or changing project documentation governed by the s
 
 - Read `docs/README.md` and the applicable documents before editing. Treat accepted ADRs as current decisions. Treat Specs in `Approved` or `In Progress` as requirements; a draft or in-review Spec is not approved.
 - Follow the document-specific status workflow in `docs/adr/0001-documentation-workflow-and-agent-rules.md` for ADRs and Specs. README files and directory indexes do not use workflow statuses. Do not skip, reverse, or claim an approval transition that has not happened.
+- For the step-by-step process, read `docs/adr/adr-workflow.md` for ADRs or `docs/specs/spec-workflow.md` for Specs.
 - Use the matching template and preserve the repository's naming and linking conventions. Keep the document status aligned with its actual review and delivery state.
 - For status changes, use `python3 docs/tools/docflow.py set-state <document-path> <new-status>` when available. Run `list` to inspect boards and `check` to validate tracked statuses.
 - After each material document-content change, append a `History` row with `python3 docs/tools/docflow.py history <document-path> --change "..." --by "..."`. Include the date through the tool; describe the actual change and identify its responsible owner.
@@ -25,3 +26,4 @@ Use this skill when creating or changing project documentation governed by the s
 |---|---|---|
 | 2026-10-28 | Added instructions for recording content changes and status transitions in document history. | Project team |
 | 2026-10-28 | Limited skill scope on main to ADRs and Specs. | Project team |
+| 2026-10-28 | Added links to the type-specific ADR and Spec workflows. | Project team |

@@ -46,6 +46,7 @@ State the decision directly. Be specific enough to guide future implementation.
 When or under what conditions should this decision be reconsidered? If there is no planned review, write “No scheduled review.”
 
 Use the transitions defined in [ADR 0001](0001-documentation-workflow-and-agent-rules.md). The `tools/docflow.py` utility validates and updates the status field.
+Follow the [ADR workflow](adr-workflow.md) when reviewing or changing an ADR status.
 
 ## History
 
