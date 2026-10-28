@@ -1,36 +1,45 @@
-# Runbook: Nome do serviço ou procedimento
+# Runbook: Service or procedure name
 
-- **Responsável:** equipe
-- **Última revisão:** AAAA-MM-DD
-- **Relacionado:** dashboard, alertas, arquitetura, ADRs
+- **Status:** Draft | In Review | Active | Retired
+- **Owner:** team
+- **Last reviewed:** YYYY-MM-DD
+- **Related:** dashboards, alerts, architecture, ADRs
 
-## Propósito e escopo
+Use the transitions defined in [ADR 0001](../adr/0001-documentation-workflow-and-agent-rules.md). The `tools/docflow.py` utility validates and updates the status field.
 
-O que este procedimento cobre e quando deve ser usado?
+## Purpose and scope
 
-## Pré-requisitos e acesso
+What does this procedure cover, and when should it be used?
 
-Liste permissões, ferramentas e verificações necessárias. Nunca inclua segredos ou credenciais.
+## Prerequisites and access
 
-## Sinais e diagnóstico
+List required permissions, tools, and checks. Never include secrets or credentials.
 
-- Sintomas:
-- Dashboards e alertas:
-- Verificações iniciais:
+## Signals and diagnosis
 
-## Procedimento
+- Symptoms:
+- Dashboards and alerts:
+- Initial checks:
+
+## Procedure
 
 1. ...
 2. ...
 
-## Recuperação e rollback
+## Recovery and rollback
 
-Descreva como voltar a um estado seguro e como confirmar a recuperação.
+Describe how to return to a safe state and confirm recovery.
 
-## Escalonamento
+## Escalation
 
-Quem deve ser acionado, por qual canal operacional, e quais informações devem ser fornecidas?
+Who should be contacted, through which operational channel, and what information should be provided?
 
-## Revisão pós-incidente
+## Post-incident review
 
-Registre links para incidentes e melhorias decorrentes; evite duplicar o relatório do incidente.
+Link to incidents and resulting improvements; avoid duplicating the incident report.
+
+## History
+
+| Date | Change | Owner |
+|---|---|---|
+| YYYY-MM-DD | Initial draft | Name |

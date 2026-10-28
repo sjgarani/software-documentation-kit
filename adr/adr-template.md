@@ -1,46 +1,54 @@
-# ADR-NNNN: Título da decisão
+# ADR-NNNN: Decision title
 
-- **Estado:** Proposta | Aceita | Rejeitada | Substituída | Retirada
-- **Data:** AAAA-MM-DD
-- **Responsáveis:** nomes ou equipe
-- **Relacionado:** links para Specs, ADRs, issues ou PRs
+- **Status:** Proposed | Accepted | Rejected | Superseded | Withdrawn
+- **Date:** YYYY-MM-DD
+- **Owners:** names or team
+- **Related:** links to Specs, ADRs, issues, or pull requests
 
-## Contexto
+## Context
 
-Que problema ou oportunidade motivou esta decisão? Inclua restrições, requisitos e informações necessárias para entender o cenário.
+What problem or opportunity prompted this decision? Include the constraints, requirements, and background needed to understand the situation.
 
-## Decisão
+## Decision
 
-Descreva a decisão de forma direta. Seja específico o suficiente para orientar implementações futuras.
+State the decision directly. Be specific enough to guide future implementation.
 
-## Alternativas consideradas
+## Alternatives considered
 
-### Alternativa A
+### Alternative A
 
-- Vantagens:
-- Desvantagens:
-- Motivo para não escolher:
+- Advantages:
+- Disadvantages:
+- Reason for not choosing:
 
-### Alternativa B
+### Alternative B
 
-- Vantagens:
-- Desvantagens:
-- Motivo para não escolher:
+- Advantages:
+- Disadvantages:
+- Reason for not choosing:
 
-## Consequências
+## Consequences
 
-### Positivas
-
-- ...
-
-### Custos e riscos
+### Benefits
 
 - ...
 
-### Ações decorrentes
+### Costs and risks
+
+- ...
+
+### Follow-up actions
 
 - [ ] ...
 
-## Revisão
+## Review
 
-Quando ou sob quais condições esta decisão deve ser reavaliada? Se não houver gatilho previsível, escreva “Sem revisão programada”.
+When or under what conditions should this decision be reconsidered? If there is no planned review, write “No scheduled review.”
+
+Use the transitions defined in [ADR 0001](0001-documentation-workflow-and-agent-rules.md). The `tools/docflow.py` utility validates and updates the status field.
+
+## History
+
+| Date | Change | Owner |
+|---|---|---|
+| YYYY-MM-DD | Initial draft | Name |

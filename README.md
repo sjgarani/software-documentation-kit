@@ -1,27 +1,38 @@
-# Documentação do projeto
+# Project documentation
 
-Esta pasta reúne a documentação mantida junto ao código do projeto. Para usar este kit em outro repositório, copie o conteúdo deste diretório para a pasta `docs/` do projeto de destino. Copie `README.md` e as pastas `adr/`, `specs/`, `runbooks/` e `guides/`; não é necessário criar uma pasta `docs/` dentro dela.
+This repository contains documentation templates and lightweight tools for keeping project decisions, specifications, and operational procedures alongside code. To use the kit in another repository, run `bash tools/install.sh /path/to/project`. The installer copies the kit into the target project's `docs/` directory and adds its agent instructions to the root `AGENTS.md`.
 
-## Navegação
+## Contents
 
-- `adr/`: decisões arquiteturais e técnicas com consequências duradouras.
-- `specs/`: requisitos e propostas de mudanças relevantes.
-- `runbooks/`: procedimentos de operação, diagnóstico e recuperação.
-- `guides/`: instruções conceituais ou de desenvolvimento que atravessam várias mudanças.
+- `adr/`: architectural and technical decisions with lasting effects.
+- `specs/`: requirements and proposals for significant changes.
+- `runbooks/`: operational, diagnostic, and recovery procedures.
+- `guides/`: practices that apply across multiple changes.
+- `tools/docflow.py`: dependency-free CLI for tracking document statuses.
+- `tools/skills/documentation-workflow/`: reusable agent skill for maintaining documentation and statuses.
 
-## Como começar
+## Getting started
 
-1. Leia [as boas práticas de documentação](guides/praticas.md) e ajuste as convenções à equipe.
-2. Para uma mudança com requisitos ou coordenação, copie [o template de Spec](specs/spec-template.md) para um arquivo `AAAA-MM-DD-assunto.md`.
-3. Para uma decisão técnica duradoura, use [o template de ADR](adr/adr-template.md) e numere o arquivo como `NNNN-titulo-curto.md`.
-4. Para operação ou recuperação de serviço, copie [o template de runbook](runbooks/runbook-template.md) e documente passos verificáveis.
+1. Read [documentation practices](guides/documentation-practices.md) and adapt them to the team.
+2. For a change with substantial requirements or coordination, copy [the Spec template](specs/spec-template.md) to `YYYY-MM-DD-topic.md`.
+3. For a lasting technical decision, use [the ADR template](adr/adr-template.md) and name the file `NNNN-short-title.md`.
+4. For operating or recovering a service, copy [the runbook template](runbooks/runbook-template.md) and write verifiable steps.
+5. Install the kit in another repository with `bash tools/install.sh /path/to/project`.
 
-## Convenções
+## Conventions
 
-- Use Markdown e links relativos para documentos nesta pasta.
-- Nomeie ADRs com número sequencial e título: `NNNN-titulo-curto.md`.
-- Nomeie Specs com data e assunto: `AAAA-MM-DD-assunto.md`.
-- Inclua estado, responsável e links relacionados nos documentos sujeitos a revisão.
-- Marque documentos substituídos como tal e aponte para o substituto; evite apagar o histórico decisório.
+- Write documentation in English and use relative links within `docs/`.
+- Name ADRs with a sequential number and short title: `NNNN-short-title.md`.
+- Name Specs with a date and topic: `YYYY-MM-DD-topic.md`.
+- Name operational procedures `runbook-short-title.md`; keep guides as descriptive Markdown files under `guides/`.
+- Include status, owner, and related links in status-tracked documents. README files and directory indexes are reviewed without a workflow status.
+- Mark superseded documents and link to their replacements; preserve decision history.
+- Keep documentation with the related code and review it alongside relevant changes.
 
-A documentação deve acompanhar o código e ser revisada junto com as mudanças relacionadas. Mantenha aqui as instruções específicas do projeto, como responsáveis e fluxo de aprovação.
+The [ADR 0001](adr/0001-documentation-workflow-and-agent-rules.md) defines the document states, workflow, history, and agent rules. The installer places the `documentation-workflow` skill in `.agents/skills/`. After installation, use `python3 docs/tools/docflow.py list`, `check`, `set-state`, or `history` from the target project.
+
+## History
+
+| Date | Change | Owner |
+|---|---|---|
+| 2026-10-28 | Documented the history process and CLI commands. | Project team |

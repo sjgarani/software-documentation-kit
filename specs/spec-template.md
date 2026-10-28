@@ -1,66 +1,68 @@
-# Spec: Nome da mudança
+# Spec: Change title
 
-- **Estado:** Rascunho | Em revisão | Aprovada | Em implementação | Concluída | Cancelada
-- **Responsável:** nome ou equipe
-- **Data:** AAAA-MM-DD
-- **Relacionado:** ADRs, issues, PRs, métricas ou documentos
+- **Status:** Draft | In Review | Approved | In Progress | Completed | Cancelled
+- **Owner:** name or team
+- **Date:** YYYY-MM-DD
+- **Related:** ADRs, issues, pull requests, metrics, or documents
 
-## Resumo
+## Summary
 
-Em poucas frases: o que muda e por quê?
+In a few sentences, what is changing and why?
 
-## Problema e contexto
+## Problem and context
 
-Quem enfrenta o problema? Como ele aparece hoje? Inclua evidências, limitações e contexto relevante.
+Who experiences the problem? How does it appear today? Include relevant evidence, constraints, and background.
 
-## Objetivos
-
-- ...
-
-## Fora de escopo
+## Goals
 
 - ...
 
-## Requisitos e critérios de aceitação
+## Out of scope
 
-Use critérios observáveis e verificáveis. Identifique requisitos funcionais e não funcionais relevantes.
+- ...
 
-- [ ] Dado ..., quando ..., então ...
+## Requirements and acceptance criteria
 
-## Proposta
+Use observable, verifiable criteria. Identify relevant functional and non-functional requirements.
 
-Explique o comportamento esperado e a experiência dos usuários ou sistemas envolvidos. Inclua exemplos ou fluxos se ajudarem.
+- [ ] Given ..., when ..., then ...
 
-## Desenho técnico
+## Proposal
 
-Descreva componentes afetados, interfaces, dados, dependências e decisões relevantes. Registre decisões duradouras em ADRs separados e faça referência a eles.
+Describe the expected behavior and the experience for users or systems. Include examples or flows where useful.
 
-## Segurança, privacidade e acessibilidade
+## Technical design
 
-Registre impactos e requisitos aplicáveis. Se não houver impacto relevante, explique brevemente por quê.
+Describe affected components, interfaces, data, dependencies, and relevant decisions. Record lasting decisions in separate ADRs and link them here.
 
-## Migração e compatibilidade
+## Security, privacy, and accessibility
 
-Como clientes, dados e integrações existentes serão afetados? Descreva migração, compatibilidade e reversão.
+Record relevant impacts and requirements. If there is no material impact, briefly explain why.
 
-## Observabilidade e operação
+## Migration and compatibility
 
-Quais logs, métricas, alertas ou procedimentos são necessários? Como saberemos se a mudança está funcionando?
+How will existing customers, data, and integrations be affected? Describe migration, compatibility, and rollback.
 
-## Plano de entrega
+## Observability and operations
 
-Descreva etapas, feature flags, rollout gradual, comunicação e plano de rollback, quando aplicável.
+What logs, metrics, alerts, or procedures are needed? How will we know the change is working?
 
-## Validação
+## Delivery plan
 
-Como os critérios de aceitação serão demonstrados? Indique verificações manuais, automatizadas, métricas ou experimento.
+Describe phases, feature flags, gradual rollout, communication, and rollback plan where applicable.
 
-## Questões em aberto
+## Validation
 
-- [ ] Pergunta — responsável — prazo ou condição para resolver
+How will the acceptance criteria be demonstrated? List manual or automated checks, metrics, or experiments.
 
-## Registro de mudanças
+## Open questions
 
-| Data | Mudança | Responsável |
+- [ ] Question — owner — deadline or condition for resolution
+
+Use the transitions defined in [ADR 0001](../adr/0001-documentation-workflow-and-agent-rules.md). The `tools/docflow.py` utility validates and updates the status field.
+
+## History
+
+| Date | Change | Owner |
 |---|---|---|
-| AAAA-MM-DD | Criação inicial | Nome |
+| YYYY-MM-DD | Initial draft | Name |

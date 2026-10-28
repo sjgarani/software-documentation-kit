@@ -1,5 +1,13 @@
-# Decisões arquiteturais
+# Architectural decisions
 
-Registre aqui decisões técnicas ou arquiteturais relevantes que tenham efeitos duradouros. Crie cada registro como `NNNN-titulo-curto.md`, usando o [template de ADR](adr-template.md).
+Record technical or architectural decisions with lasting effects here. Create each entry as `NNNN-short-title.md` using the [ADR template](adr-template.md).
 
-Estados recomendados: Proposta, Aceita, Rejeitada, Substituída ou Retirada. Ao substituir uma decisão, mantenha o ADR anterior e crie links entre os documentos.
+[ADR 0001](0001-documentation-workflow-and-agent-rules.md) defines the document workflow, states, and agent rules.
+
+Recommended ADR states: Proposed, Accepted, Rejected, Superseded, or Withdrawn. When replacing a decision, preserve the earlier ADR and link the two documents.
+
+## History
+
+| Date | Change | Owner |
+|---|---|---|
+| 2026-10-28 | Added the document history policy to the decision index. | Project team |
